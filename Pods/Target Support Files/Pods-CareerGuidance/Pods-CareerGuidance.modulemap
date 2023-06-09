@@ -1,0 +1,6 @@
+framework module Pods_CareerGuidance {
+  umbrella header "Pods-CareerGuidance-umbrella.h"
+
+  export *
+  module * { export * }
+}
