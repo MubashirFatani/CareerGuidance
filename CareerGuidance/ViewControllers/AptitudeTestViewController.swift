@@ -21,9 +21,29 @@ class AptitudeTestViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func btnStartTapped(_ sender: UIButton) {
+    func showOptions() {
+        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "MCQsViewController") as! MCQsViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let alert = UIAlertController(title: "Aptitude Test", message: "Which test you want to give?", preferredStyle: .alert)
+        
+        let ecatOption = UIAlertAction(title: "ECAT", style: .default) { action in
+            vc.testType = .ecat
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        let mcatOption = UIAlertAction(title: "MCAT", style: .default) { action in
+            vc.testType = .mcat
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alert.addAction(ecatOption)
+        alert.addAction(mcatOption)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
+    
+    @IBAction func btnStartTapped(_ sender: UIButton) {
+        showOptions()
     }
 
 }

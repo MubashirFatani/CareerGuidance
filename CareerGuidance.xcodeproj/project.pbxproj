@@ -13,6 +13,7 @@
 		71167BA929CE50BE00FD42A3 /* ExtentionOfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71167BA829CE50BE00FD42A3 /* ExtentionOfViewController.swift */; };
 		71240C3429E368C30062BD21 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71240C3329E368C30062BD21 /* ProfileViewController.swift */; };
 		7128EC0D2A1178A1005096AC /* UniversityUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128EC0C2A1178A1005096AC /* UniversityUpdatesViewController.swift */; };
+		714949F62A3505ED00DF35A7 /* QuestionDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */; };
 		7149F26F2A3106BF00FF5B14 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7149F26E2A3106BF00FF5B14 /* Constant.swift */; };
 		7149F2712A310A4F00FF5B14 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7149F2702A310A4F00FF5B14 /* MapViewController.swift */; };
 		715F9D2529F45BE60060BE9B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F9D2429F45BE60060BE9B /* ForgotPasswordViewController.swift */; };
@@ -48,6 +49,7 @@
 		71167BA829CE50BE00FD42A3 /* ExtentionOfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionOfViewController.swift; sourceTree = "<group>"; };
 		71240C3329E368C30062BD21 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7128EC0C2A1178A1005096AC /* UniversityUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityUpdatesViewController.swift; sourceTree = "<group>"; };
+		714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataClass.swift; sourceTree = "<group>"; };
 		7149F26E2A3106BF00FF5B14 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		7149F2702A310A4F00FF5B14 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		715F9D2429F45BE60060BE9B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		714949F42A3505B300DF35A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		716F188B2A1153AA00319BA4 /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		71E88A7429C0F7AB0001F1DB /* CareerGuidance */ = {
 			isa = PBXGroup;
 			children = (
+				714949F42A3505B300DF35A7 /* Models */,
 				716ABC022A22A68F0011C420 /* GoogleService-Info.plist */,
 				71167BA629CE4F2A00FD42A3 /* Utility.swift */,
 				71167BA829CE50BE00FD42A3 /* ExtentionOfViewController.swift */,
@@ -325,6 +336,7 @@
 				719E9A282A1413DA00316083 /* ScoreViewController.swift in Sources */,
 				71B14D5E2A0C317500203316 /* AptitudeTestViewController.swift in Sources */,
 				71167BA729CE4F2A00FD42A3 /* Utility.swift in Sources */,
+				714949F62A3505ED00DF35A7 /* QuestionDataClass.swift in Sources */,
 				715F9D2729F473DE0060BE9B /* VerificationCodeViewController.swift in Sources */,
 				7128EC0D2A1178A1005096AC /* UniversityUpdatesViewController.swift in Sources */,
 				71651E372A0D84CD0028E85F /* BooksViewController.swift in Sources */,

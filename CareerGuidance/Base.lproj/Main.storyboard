@@ -2558,7 +2558,7 @@ these absorption bands? </string>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbY-CV-dbx">
                                                             <rect key="frame" x="0.0" y="37.5" width="394" height="27.5"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radioSelected" translatesAutoresizingMaskIntoConstraints="NO" id="CKD-pa-Efc">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radioUnselected" translatesAutoresizingMaskIntoConstraints="NO" id="CKD-pa-Efc">
                                                                     <rect key="frame" x="10" y="1.5" width="25" height="25"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="TF4-Xw-ABv"/>
@@ -2731,7 +2731,6 @@ these absorption bands? </string>
         <image name="lcok" width="13" height="16"/>
         <image name="percentage" width="26" height="18"/>
         <image name="profileUpperBackground" width="375" height="227"/>
-        <image name="radioSelected" width="256" height="256"/>
         <image name="radioUnselected" width="256" height="256"/>
         <image name="score" width="52" height="66"/>
         <image name="uni 1" width="81" height="73"/>
