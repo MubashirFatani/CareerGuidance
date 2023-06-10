@@ -91,6 +91,7 @@ class LoginViewController: UIViewController{
                             print(data?.data()! as Any)
                         })
                     }
+                
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
                     self.navigationController?.pushViewController(vc, animated: true)
 
