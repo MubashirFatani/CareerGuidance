@@ -85,7 +85,6 @@ class LoginViewController: UIViewController{
                     self.showAlert(AlertTytle: "Error", AlertMessage: err.localizedDescription)
                 }
                 else {
-//                    print(firebaseAuth.currentUser?.uid ?? "NONE")
                     let uid = firebaseAuth.currentUser?.uid ?? "";
                     if(uid != ""){
                         firebaseStore.collection("user").document(uid).getDocument(completion: { data, err in

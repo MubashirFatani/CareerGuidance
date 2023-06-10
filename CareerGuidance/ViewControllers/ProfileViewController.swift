@@ -54,7 +54,7 @@ class ProfileViewController: UIViewController{
         
         txtFieldHSSC.delegate = self
         
-      //  marksHidden(hidden: true)
+        //  marksHidden(hidden: true)
         
         let InterestdoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(interestDidTapDone))
         toolbar.setItems([InterestdoneButton], animated: true)
@@ -84,10 +84,10 @@ class ProfileViewController: UIViewController{
     @IBAction func btnYesClicked(_ sender: UIButton) {
         
         if txtFieldFullName.text?.isEmpty ?? true || txtFieldInterest.text?.isEmpty ?? true || txtFieldHSSC.text?.isEmpty ?? true || txtFieldPercentageHSSC.text?.isEmpty ?? true{
-
+            
             showAlert(AlertTytle: "Alert", AlertMessage: "Please profile all information")
         }
-
+        
         else{
             let firebaseAuth = Auth.auth()
             let firebaseStore = Firestore.firestore()
@@ -99,30 +99,28 @@ class ProfileViewController: UIViewController{
                 "percentage_HSSC": txtFieldPercentageHSSC.text!,
                 "isProfileComplete": true
             ] as [String : Any]
-
+            
             let uid = firebaseAuth.currentUser?.uid ?? ""
-
+            
             let imageData = imageView.image?.pngData() ?? Data()
             let reference  = storage.reference().child("DisplayPicture/\(uid).png")
-            let uploadTask = reference.putData(imageData, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
+            _ = reference.putData(imageData, metadata: nil) { (metadata, error) in
+                guard metadata != nil else {
                     // Uh-oh, an error occurred!
                     return
                 }
-                // Metadata contains file metadata such as size, content-type.
-                //                  let size = metadata.size
-                // You can also access to download URL after upload.
+                
                 reference.downloadURL { (url, error) in
-
+                    
                     if error != nil {
-                        //                          self.showAlert(AlertTytle: "Error", AlertMessage: err.localizedDescription)
+//                        self.showAlert(AlertTytle: "Error", AlertMessage: err.localizedDescription)
                     }else{
                         userProfileData["imageUrl"] = url
                     }
-
+                    
                 }
             }
-
+            
             if(uid != ""){
                 firebaseStore.collection("user").document(uid).setData(userProfileData, merge: true)
             }
@@ -131,7 +129,7 @@ class ProfileViewController: UIViewController{
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-
+    
     
     @IBAction func btnEditTapped(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
@@ -210,7 +208,7 @@ class ProfileViewController: UIViewController{
                 
             }
             
-           
+            
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
             
