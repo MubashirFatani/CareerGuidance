@@ -69,8 +69,6 @@ class SignUpViewCintroller: UIViewController {
         else{
             UserDefaults.standard.setValue(txtFieldEmail.text!, forKey: "userEmail")
             UserDefaults.standard.setValue(txtFieldPassword.text!, forKey: "userPassword")
-//    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-//    self.navigationController?.pushViewController(vc, animated: true)
             self.authUser()
         }
               
