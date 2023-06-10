@@ -83,53 +83,53 @@ class ProfileViewController: UIViewController{
     }
     @IBAction func btnYesClicked(_ sender: UIButton) {
         
-//        if txtFieldFullName.text?.isEmpty ?? true || txtFieldInterest.text?.isEmpty ?? true || txtFieldHSSC.text?.isEmpty ?? true || txtFieldPercentageHSSC.text?.isEmpty ?? true{
-//
-//            showAlert(AlertTytle: "Alert", AlertMessage: "Please profile all information")
-//        }
-//
-//        else{
-//            let firebaseAuth = Auth.auth()
-//            let firebaseStore = Firestore.firestore()
-//            let storage = Storage.storage()
-//            var userProfileData = [
-//                "name": txtFieldFullName.text!,
-//                "interest": txtFieldInterest.text!,
-//                "HSSC":txtFieldHSSC.text!,
-//                "percentage_HSSC": txtFieldPercentageHSSC.text!,
-//                "isProfileComplete": true
-//            ] as [String : Any]
-//
-//            let uid = firebaseAuth.currentUser?.uid ?? ""
-//
-//            let imageData = imageView.image?.pngData() ?? Data()
-//            let reference  = storage.reference().child("DisplayPicture/\(uid).png")
-//            let uploadTask = reference.putData(imageData, metadata: nil) { (metadata, error) in
-//                guard let metadata = metadata else {
-//                    // Uh-oh, an error occurred!
-//                    return
-//                }
-//                // Metadata contains file metadata such as size, content-type.
-//                //                  let size = metadata.size
-//                // You can also access to download URL after upload.
-//                reference.downloadURL { (url, error) in
-//
-//                    if error != nil {
-//                        //                          self.showAlert(AlertTytle: "Error", AlertMessage: err.localizedDescription)
-//                    }else{
-//                        userProfileData["imageUrl"] = url
-//                    }
-//
-//                }
-//            }
-//
-//            if(uid != ""){
-//                firebaseStore.collection("user").document(uid).setData(userProfileData, merge: true)
-//            }
+        if txtFieldFullName.text?.isEmpty ?? true || txtFieldInterest.text?.isEmpty ?? true || txtFieldHSSC.text?.isEmpty ?? true || txtFieldPercentageHSSC.text?.isEmpty ?? true{
+
+            showAlert(AlertTytle: "Alert", AlertMessage: "Please profile all information")
+        }
+
+        else{
+            let firebaseAuth = Auth.auth()
+            let firebaseStore = Firestore.firestore()
+            let storage = Storage.storage()
+            var userProfileData = [
+                "name": txtFieldFullName.text!,
+                "interest": txtFieldInterest.text!,
+                "HSSC":txtFieldHSSC.text!,
+                "percentage_HSSC": txtFieldPercentageHSSC.text!,
+                "isProfileComplete": true
+            ] as [String : Any]
+
+            let uid = firebaseAuth.currentUser?.uid ?? ""
+
+            let imageData = imageView.image?.pngData() ?? Data()
+            let reference  = storage.reference().child("DisplayPicture/\(uid).png")
+            let uploadTask = reference.putData(imageData, metadata: nil) { (metadata, error) in
+                guard let metadata = metadata else {
+                    // Uh-oh, an error occurred!
+                    return
+                }
+                // Metadata contains file metadata such as size, content-type.
+                //                  let size = metadata.size
+                // You can also access to download URL after upload.
+                reference.downloadURL { (url, error) in
+
+                    if error != nil {
+                        //                          self.showAlert(AlertTytle: "Error", AlertMessage: err.localizedDescription)
+                    }else{
+                        userProfileData["imageUrl"] = url
+                    }
+
+                }
+            }
+
+            if(uid != ""){
+                firebaseStore.collection("user").document(uid).setData(userProfileData, merge: true)
+            }
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
             vc.image = imageView.image
             self.navigationController?.pushViewController(vc, animated: true)
-  //      }
+        }
     }
 
     
