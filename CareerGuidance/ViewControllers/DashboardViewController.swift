@@ -93,7 +93,7 @@ class DashboardViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "UniversityUpdatesViewController")as! UniversityUpdatesViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     @IBAction func btnScoreTapped(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ScoreViewController")as! ScoreViewController
         vc.score = 79

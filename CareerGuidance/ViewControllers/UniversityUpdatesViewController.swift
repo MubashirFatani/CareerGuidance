@@ -69,6 +69,11 @@ class UniversityUpdatesViewController: UIViewController {
 //
 //        UIApplication.shared.open(mapURL, options: [:], completionHandler: nil)
     }
+    @IBAction func btnUniversitiesData(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "UniversityDataViewController")as! UniversityDataViewController
+        vc.shouldShowAll = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 

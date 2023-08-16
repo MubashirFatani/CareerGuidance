@@ -502,7 +502,7 @@ Onces you open the test, the timer automatically started.
                                                     <action selector="btnCareerTapped:" destination="V0W-qe-ONi" eventType="touchUpInside" id="TX6-mr-C0A"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tM-3U-bhw">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tM-3U-bhw">
                                                 <rect key="frame" x="228.5" y="370" width="165.5" height="150"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iss 1" translatesAutoresizingMaskIntoConstraints="NO" id="Yl0-NO-Uof">
@@ -1103,7 +1103,7 @@ Onces you open the test, the timer automatically started.
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="HSSC PERCENTAGE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Dn-fg-UMh">
                                                         <rect key="frame" x="45" y="9.5" width="319" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1917,19 +1917,55 @@ Onces you open the test, the timer automatically started.
                                     <constraint firstAttribute="width" secondItem="F7g-83-wCm" secondAttribute="height" multiplier="1:1" id="Ppn-Y5-HkG"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DcF-8o-aKZ">
+                                <rect key="frame" x="107" y="666.5" width="200" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes no button" translatesAutoresizingMaskIntoConstraints="NO" id="TwA-x3-zVp">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="52b-yC-NBz"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="TwA-x3-zVp" firstAttribute="top" secondItem="DcF-8o-aKZ" secondAttribute="top" id="2yT-Ia-euz"/>
+                                    <constraint firstAttribute="width" constant="200" id="Kjz-yZ-AYg"/>
+                                    <constraint firstAttribute="trailing" secondItem="TwA-x3-zVp" secondAttribute="trailing" id="MnB-vn-aSD"/>
+                                    <constraint firstItem="TwA-x3-zVp" firstAttribute="leading" secondItem="DcF-8o-aKZ" secondAttribute="leading" id="YwM-Eb-aSj"/>
+                                    <constraint firstAttribute="bottom" secondItem="TwA-x3-zVp" secondAttribute="bottom" id="tBY-HD-gpU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT3-Dy-pt9">
+                                <rect key="frame" x="107" y="666.5" width="200" height="70"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Find Universities">
+                                    <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showUniversities:" destination="ebM-nL-3Zl" eventType="touchUpInside" id="afo-0I-ndo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N1h-55-LdU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Eia-Vu-7IO" firstAttribute="top" secondItem="N1h-55-LdU" secondAttribute="top" constant="30" id="5jU-m6-5G3"/>
                             <constraint firstItem="fUf-OF-mtY" firstAttribute="width" secondItem="QwM-7i-cIg" secondAttribute="width" id="6JC-CO-2CA"/>
+                            <constraint firstItem="dT3-Dy-pt9" firstAttribute="trailing" secondItem="DcF-8o-aKZ" secondAttribute="trailing" id="A1f-No-OWy"/>
+                            <constraint firstItem="dT3-Dy-pt9" firstAttribute="top" secondItem="DcF-8o-aKZ" secondAttribute="top" id="Cyz-rm-DIZ"/>
                             <constraint firstItem="hU1-es-W6t" firstAttribute="height" secondItem="QwM-7i-cIg" secondAttribute="height" id="FhR-8g-pvp"/>
                             <constraint firstItem="hU1-es-W6t" firstAttribute="centerY" secondItem="QwM-7i-cIg" secondAttribute="centerY" id="Gc5-QE-Xvv"/>
                             <constraint firstItem="fUf-OF-mtY" firstAttribute="leading" secondItem="QwM-7i-cIg" secondAttribute="trailing" constant="25" id="Jkw-5b-3lM"/>
+                            <constraint firstItem="dT3-Dy-pt9" firstAttribute="bottom" secondItem="DcF-8o-aKZ" secondAttribute="bottom" id="Lxq-bh-uEP"/>
                             <constraint firstItem="hU1-es-W6t" firstAttribute="width" secondItem="QwM-7i-cIg" secondAttribute="width" id="QvZ-yY-Rdd"/>
                             <constraint firstItem="fUf-OF-mtY" firstAttribute="centerY" secondItem="QwM-7i-cIg" secondAttribute="centerY" id="SOK-DF-9PB"/>
+                            <constraint firstItem="dT3-Dy-pt9" firstAttribute="leading" secondItem="DcF-8o-aKZ" secondAttribute="leading" id="SYR-WD-7Mx"/>
                             <constraint firstItem="fUf-OF-mtY" firstAttribute="height" secondItem="QwM-7i-cIg" secondAttribute="height" id="Um6-uV-wrl"/>
+                            <constraint firstItem="DcF-8o-aKZ" firstAttribute="top" secondItem="F7g-83-wCm" secondAttribute="bottom" constant="100" id="WXv-un-YOi"/>
                             <constraint firstItem="QwM-7i-cIg" firstAttribute="top" secondItem="Eia-Vu-7IO" secondAttribute="bottom" constant="45" id="Wut-Wf-b0A"/>
+                            <constraint firstItem="DcF-8o-aKZ" firstAttribute="centerX" secondItem="UFp-XJ-VVL" secondAttribute="centerX" id="Zq1-ph-NC0"/>
                             <constraint firstItem="F7g-83-wCm" firstAttribute="centerY" secondItem="UFp-XJ-VVL" secondAttribute="centerY" id="eav-ga-1yp"/>
                             <constraint firstItem="F7g-83-wCm" firstAttribute="centerX" secondItem="UFp-XJ-VVL" secondAttribute="centerX" id="fwB-jm-aQ2"/>
                             <constraint firstItem="QwM-7i-cIg" firstAttribute="centerX" secondItem="UFp-XJ-VVL" secondAttribute="centerX" id="jhc-KG-re3"/>
@@ -1978,6 +2014,125 @@ Onces you open the test, the timer automatically started.
             </objects>
             <point key="canvasLocation" x="270" y="2058"/>
         </scene>
+        <!--Ecat Books View Controller-->
+        <scene sceneID="JAJ-BD-wZu">
+            <objects>
+                <viewController storyboardIdentifier="EcatBooksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iqh-JU-BAq" customClass="EcatBooksViewController" customModule="CareerGuidance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FT9-hv-PcP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ECAT BOOKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8n-14-gH4">
+                                <rect key="frame" x="91.5" y="74" width="231" height="40.5"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="36"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download Maths PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhZ-YI-3QP">
+                                <rect key="frame" x="20" y="164.5" width="298.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="T50-0w-UjP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8s-1N-1VU">
+                                <rect key="frame" x="20" y="164.5" width="298.5" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnMathsClick:" destination="iqh-JU-BAq" eventType="touchUpInside" id="Ocs-MT-hI2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download Physics PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAU-I8-gMU">
+                                <rect key="frame" x="20" y="234.5" width="314.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bAJ-Ml-Hqh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zro-vo-MC1">
+                                <rect key="frame" x="20" y="234.5" width="314.5" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnPhysicsClick:" destination="iqh-JU-BAq" eventType="touchUpInside" id="pnJ-gx-mv5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download Chemistry PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNX-01-3Xb">
+                                <rect key="frame" x="20" y="304.5" width="337.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xbN-pi-EM5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YX-rj-tXI">
+                                <rect key="frame" x="20" y="304.5" width="337.5" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnChemistryClick:" destination="iqh-JU-BAq" eventType="touchUpInside" id="b12-oS-cak"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download English PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAk-sJ-xsd">
+                                <rect key="frame" x="20" y="374.5" width="311" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gzu-pU-S9n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0B-pB-VJE">
+                                <rect key="frame" x="20" y="374.5" width="311" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnEnglishClick:" destination="iqh-JU-BAq" eventType="touchUpInside" id="CYj-PB-I47"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0D9-hT-x5E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2YX-rj-tXI" firstAttribute="top" secondItem="WNX-01-3Xb" secondAttribute="top" id="06G-4L-xZ1"/>
+                            <constraint firstItem="2YX-rj-tXI" firstAttribute="leading" secondItem="WNX-01-3Xb" secondAttribute="leading" id="4p9-c0-r1S"/>
+                            <constraint firstItem="WNX-01-3Xb" firstAttribute="top" secondItem="VAU-I8-gMU" secondAttribute="bottom" constant="30" id="6OX-LE-g1w"/>
+                            <constraint firstItem="A8s-1N-1VU" firstAttribute="bottom" secondItem="JhZ-YI-3QP" secondAttribute="bottom" id="B1s-si-8kR"/>
+                            <constraint firstItem="JhZ-YI-3QP" firstAttribute="top" secondItem="G8n-14-gH4" secondAttribute="bottom" constant="50" id="GLy-jE-uHe"/>
+                            <constraint firstItem="zro-vo-MC1" firstAttribute="trailing" secondItem="VAU-I8-gMU" secondAttribute="trailing" id="GTY-yP-9lT"/>
+                            <constraint firstItem="VAU-I8-gMU" firstAttribute="top" secondItem="JhZ-YI-3QP" secondAttribute="bottom" constant="30" id="LOb-XQ-4PV"/>
+                            <constraint firstItem="A8s-1N-1VU" firstAttribute="trailing" secondItem="JhZ-YI-3QP" secondAttribute="trailing" id="UV9-xg-Z7X"/>
+                            <constraint firstItem="zro-vo-MC1" firstAttribute="bottom" secondItem="VAU-I8-gMU" secondAttribute="bottom" id="WEm-0P-RkK"/>
+                            <constraint firstItem="FAk-sJ-xsd" firstAttribute="top" secondItem="WNX-01-3Xb" secondAttribute="bottom" constant="30" id="XOO-8m-YX6"/>
+                            <constraint firstItem="r0B-pB-VJE" firstAttribute="trailing" secondItem="FAk-sJ-xsd" secondAttribute="trailing" id="Zlg-9r-Guv"/>
+                            <constraint firstItem="JhZ-YI-3QP" firstAttribute="leading" secondItem="0D9-hT-x5E" secondAttribute="leading" constant="20" id="bW1-kc-WQ2"/>
+                            <constraint firstItem="VAU-I8-gMU" firstAttribute="leading" secondItem="0D9-hT-x5E" secondAttribute="leading" constant="20" id="cTy-VP-PkH"/>
+                            <constraint firstItem="r0B-pB-VJE" firstAttribute="bottom" secondItem="FAk-sJ-xsd" secondAttribute="bottom" id="dJd-ZB-8YD"/>
+                            <constraint firstItem="A8s-1N-1VU" firstAttribute="leading" secondItem="JhZ-YI-3QP" secondAttribute="leading" id="gKu-vB-s8Y"/>
+                            <constraint firstItem="A8s-1N-1VU" firstAttribute="top" secondItem="JhZ-YI-3QP" secondAttribute="top" id="hn8-PR-dh5"/>
+                            <constraint firstItem="G8n-14-gH4" firstAttribute="centerX" secondItem="FT9-hv-PcP" secondAttribute="centerX" id="iTl-5f-P7n"/>
+                            <constraint firstItem="zro-vo-MC1" firstAttribute="leading" secondItem="VAU-I8-gMU" secondAttribute="leading" id="jRB-vg-18i"/>
+                            <constraint firstItem="zro-vo-MC1" firstAttribute="top" secondItem="VAU-I8-gMU" secondAttribute="top" id="kq6-pN-kmD"/>
+                            <constraint firstItem="2YX-rj-tXI" firstAttribute="bottom" secondItem="WNX-01-3Xb" secondAttribute="bottom" id="le4-1D-zoT"/>
+                            <constraint firstItem="2YX-rj-tXI" firstAttribute="trailing" secondItem="WNX-01-3Xb" secondAttribute="trailing" id="pSz-4y-6Rl"/>
+                            <constraint firstItem="WNX-01-3Xb" firstAttribute="leading" secondItem="0D9-hT-x5E" secondAttribute="leading" constant="20" id="rJI-SE-SNt"/>
+                            <constraint firstItem="G8n-14-gH4" firstAttribute="top" secondItem="0D9-hT-x5E" secondAttribute="top" constant="30" id="vKG-Xy-6bh"/>
+                            <constraint firstItem="r0B-pB-VJE" firstAttribute="top" secondItem="FAk-sJ-xsd" secondAttribute="top" id="waO-a7-RCy"/>
+                            <constraint firstItem="FAk-sJ-xsd" firstAttribute="leading" secondItem="0D9-hT-x5E" secondAttribute="leading" constant="20" id="xfP-zc-yD7"/>
+                            <constraint firstItem="r0B-pB-VJE" firstAttribute="leading" secondItem="FAk-sJ-xsd" secondAttribute="leading" id="yDb-dq-vho"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sZJ-NI-SlW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="2058"/>
+        </scene>
         <!--Past Papers View Controller-->
         <scene sceneID="Sxx-sU-neb">
             <objects>
@@ -1987,7 +2142,7 @@ Onces you open the test, the timer automatically started.
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Past Papers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi4-BW-WgN">
-                                <rect key="frame" x="30" y="74" width="137.5" height="27"/>
+                                <rect key="frame" x="40" y="74" width="137.5" height="27"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1996,15 +2151,15 @@ Onces you open the test, the timer automatically started.
                                 <rect key="frame" x="30" y="131" width="354" height="711"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PastPapersTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PastPapersTableViewCell" rowHeight="50" id="Hoa-TG-SYi" customClass="PastPapersTableViewCell" customModule="CareerGuidance" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="354" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PastPapersTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PastPapersTableViewCell" rowHeight="70" id="Hoa-TG-SYi" customClass="PastPapersTableViewCell" customModule="CareerGuidance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="354" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hoa-TG-SYi" id="DOf-IO-y6G">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qce-Dq-cRI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                                    <rect key="frame" x="0.0" y="10" width="354" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Numbers" translatesAutoresizingMaskIntoConstraints="NO" id="Ixz-Wo-HjB">
                                                             <rect key="frame" x="15" y="7.5" width="35" height="35"/>
@@ -2014,13 +2169,13 @@ Onces you open the test, the timer automatically started.
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1O-5x-3o1">
-                                                            <rect key="frame" x="29" y="15" width="7.5" height="20.5"/>
+                                                            <rect key="frame" x="29" y="11" width="7.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NED UNIVERSITY" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc1-b7-znK">
-                                                            <rect key="frame" x="60" y="16" width="284" height="18"/>
+                                                            <rect key="frame" x="60" y="16" width="294" height="18"/>
                                                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -2029,9 +2184,9 @@ Onces you open the test, the timer automatically started.
                                                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="Ixz-Wo-HjB" firstAttribute="centerY" secondItem="Qce-Dq-cRI" secondAttribute="centerY" id="1CK-1f-9I1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="wc1-b7-znK" secondAttribute="trailing" constant="10" id="4zr-rt-OoR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wc1-b7-znK" secondAttribute="trailing" id="4zr-rt-OoR"/>
                                                         <constraint firstItem="wc1-b7-znK" firstAttribute="leading" secondItem="Ixz-Wo-HjB" secondAttribute="trailing" constant="10" id="Dhs-Ub-B1o"/>
-                                                        <constraint firstItem="x1O-5x-3o1" firstAttribute="centerY" secondItem="Ixz-Wo-HjB" secondAttribute="centerY" id="PYW-45-46q"/>
+                                                        <constraint firstItem="x1O-5x-3o1" firstAttribute="centerY" secondItem="Ixz-Wo-HjB" secondAttribute="centerY" multiplier="0.85" id="PYW-45-46q"/>
                                                         <constraint firstItem="Ixz-Wo-HjB" firstAttribute="leading" secondItem="Qce-Dq-cRI" secondAttribute="leading" constant="15" id="WdP-NJ-cJT"/>
                                                         <constraint firstItem="wc1-b7-znK" firstAttribute="centerY" secondItem="Qce-Dq-cRI" secondAttribute="centerY" id="ZPN-M1-ZpB"/>
                                                         <constraint firstAttribute="height" constant="50" id="f3T-b0-Kek"/>
@@ -2041,12 +2196,15 @@ Onces you open the test, the timer automatically started.
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="Qce-Dq-cRI" firstAttribute="top" secondItem="DOf-IO-y6G" secondAttribute="top" id="acv-TR-tB0"/>
+                                                <constraint firstItem="Qce-Dq-cRI" firstAttribute="top" secondItem="DOf-IO-y6G" secondAttribute="top" constant="10" id="czm-4V-95H"/>
                                                 <constraint firstItem="Qce-Dq-cRI" firstAttribute="leading" secondItem="DOf-IO-y6G" secondAttribute="leading" id="f0r-Pp-d7q"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qce-Dq-cRI" secondAttribute="trailing" id="koZ-gH-7zd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="UniversityView" destination="Qce-Dq-cRI" id="tcP-0z-bJK"/>
                                             <outlet property="lblNumber" destination="x1O-5x-3o1" id="8rO-EK-DPM"/>
                                             <outlet property="lblUniversityNames" destination="wc1-b7-znK" id="4Qi-oZ-s1g"/>
                                             <outlet property="numberCircle" destination="Ixz-Wo-HjB" id="N1a-a1-o34"/>
@@ -2068,7 +2226,7 @@ Onces you open the test, the timer automatically started.
                             <constraint firstItem="4Vu-UZ-uBU" firstAttribute="leading" secondItem="e8o-mb-i3S" secondAttribute="leading" constant="30" id="egc-jk-bAD"/>
                             <constraint firstItem="e8o-mb-i3S" firstAttribute="bottom" secondItem="4Vu-UZ-uBU" secondAttribute="bottom" constant="20" id="hnw-jJ-iq3"/>
                             <constraint firstItem="yi4-BW-WgN" firstAttribute="top" secondItem="e8o-mb-i3S" secondAttribute="top" constant="30" id="kBq-F6-Yie"/>
-                            <constraint firstItem="yi4-BW-WgN" firstAttribute="leading" secondItem="e8o-mb-i3S" secondAttribute="leading" constant="30" id="lhI-so-cQQ"/>
+                            <constraint firstItem="yi4-BW-WgN" firstAttribute="leading" secondItem="e8o-mb-i3S" secondAttribute="leading" constant="40" id="lhI-so-cQQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2119,7 +2277,7 @@ Onces you open the test, the timer automatically started.
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1K-vm-o4h">
                                 <rect key="frame" x="30" y="131" width="354" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROGRAMS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqU-Sa-c67">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNIVERSITIES DATA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqU-Sa-c67">
                                         <rect key="frame" x="10" y="17.5" width="334" height="25"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2137,6 +2295,9 @@ Onces you open the test, the timer automatically started.
                                 <rect key="frame" x="30" y="131" width="354" height="60"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnUniversitiesData:" destination="EvF-WH-yHf" eventType="touchUpInside" id="3AN-EC-hXY"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giM-Ul-KPn">
                                 <rect key="frame" x="30" y="221" width="354" height="60"/>
@@ -2709,6 +2870,236 @@ these absorption bands? </string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gr9-eJ-tBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3695.652173913044" y="1370.7589285714284"/>
+        </scene>
+        <!--Mcat View Controller-->
+        <scene sceneID="eS0-YX-wQg">
+            <objects>
+                <viewController storyboardIdentifier="McatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b3d-yc-Miv" customClass="McatViewController" customModule="CareerGuidance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lcq-ec-mrm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCAT BOOKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agr-sv-aBe">
+                                <rect key="frame" x="88.5" y="74" width="237" height="40.5"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="36"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download Biology PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTw-eh-4n3">
+                                <rect key="frame" x="20" y="164.5" width="311" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1wZ-DL-iyI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXo-qh-r6F">
+                                <rect key="frame" x="20" y="164.5" width="311" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnBiologyTapped:" destination="b3d-yc-Miv" eventType="touchUpInside" id="9q8-7M-rPy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download Physics PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="so9-Jl-7XL">
+                                <rect key="frame" x="20" y="234.5" width="314.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="B8q-Mx-azl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNl-XV-b9w">
+                                <rect key="frame" x="20" y="234.5" width="314.5" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnPhysicsTapped:" destination="b3d-yc-Miv" eventType="touchUpInside" id="qg4-nd-kUJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download Chemistry PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsV-Kq-YYn">
+                                <rect key="frame" x="20" y="304.5" width="337.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fap-jx-98Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdL-Jj-s5e">
+                                <rect key="frame" x="20" y="304.5" width="337.5" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnChemistryTapped:" destination="b3d-yc-Miv" eventType="touchUpInside" id="x89-Es-BC5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download English PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEm-LA-nkU">
+                                <rect key="frame" x="20" y="374.5" width="311" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vbc-67-uhN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jO4-HR-b7y">
+                                <rect key="frame" x="20" y="374.5" width="311" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnEnglishTapped:" destination="b3d-yc-Miv" eventType="touchUpInside" id="c8V-Rk-iuJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JX1-G4-DdV">
+                                <rect key="frame" x="-57" y="234" width="314.5" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TMa-yC-jCg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="agr-sv-aBe" firstAttribute="top" secondItem="TMa-yC-jCg" secondAttribute="top" constant="30" id="3mb-JH-NmI"/>
+                            <constraint firstItem="lEm-LA-nkU" firstAttribute="top" secondItem="YsV-Kq-YYn" secondAttribute="bottom" constant="30" id="7gL-Ez-mT1"/>
+                            <constraint firstItem="FNl-XV-b9w" firstAttribute="bottom" secondItem="so9-Jl-7XL" secondAttribute="bottom" id="9pF-EH-Jaa"/>
+                            <constraint firstItem="nTw-eh-4n3" firstAttribute="leading" secondItem="TMa-yC-jCg" secondAttribute="leading" constant="20" id="A2g-wz-FhJ"/>
+                            <constraint firstItem="FNl-XV-b9w" firstAttribute="leading" secondItem="so9-Jl-7XL" secondAttribute="leading" id="BAn-G1-1ea"/>
+                            <constraint firstItem="zXo-qh-r6F" firstAttribute="top" secondItem="nTw-eh-4n3" secondAttribute="top" id="C95-fC-ae4"/>
+                            <constraint firstItem="so9-Jl-7XL" firstAttribute="leading" secondItem="TMa-yC-jCg" secondAttribute="leading" constant="20" id="Cpm-PX-cKE"/>
+                            <constraint firstItem="agr-sv-aBe" firstAttribute="centerX" secondItem="Lcq-ec-mrm" secondAttribute="centerX" id="Fc9-qn-Vne"/>
+                            <constraint firstItem="jO4-HR-b7y" firstAttribute="bottom" secondItem="lEm-LA-nkU" secondAttribute="bottom" id="Ib6-ad-V5X"/>
+                            <constraint firstItem="FdL-Jj-s5e" firstAttribute="trailing" secondItem="YsV-Kq-YYn" secondAttribute="trailing" id="Rzr-Nh-RQb"/>
+                            <constraint firstItem="so9-Jl-7XL" firstAttribute="top" secondItem="nTw-eh-4n3" secondAttribute="bottom" constant="30" id="VPq-8H-biD"/>
+                            <constraint firstItem="FNl-XV-b9w" firstAttribute="trailing" secondItem="so9-Jl-7XL" secondAttribute="trailing" id="VSc-oO-68Y"/>
+                            <constraint firstItem="jO4-HR-b7y" firstAttribute="top" secondItem="lEm-LA-nkU" secondAttribute="top" id="aTE-fE-nxM"/>
+                            <constraint firstItem="zXo-qh-r6F" firstAttribute="bottom" secondItem="nTw-eh-4n3" secondAttribute="bottom" id="aTh-XF-Kbh"/>
+                            <constraint firstItem="jO4-HR-b7y" firstAttribute="leading" secondItem="lEm-LA-nkU" secondAttribute="leading" id="ajg-uQ-B31"/>
+                            <constraint firstItem="YsV-Kq-YYn" firstAttribute="leading" secondItem="TMa-yC-jCg" secondAttribute="leading" constant="20" id="bVo-XB-iQh"/>
+                            <constraint firstItem="YsV-Kq-YYn" firstAttribute="top" secondItem="so9-Jl-7XL" secondAttribute="bottom" constant="30" id="bYp-i5-dqt"/>
+                            <constraint firstItem="jO4-HR-b7y" firstAttribute="trailing" secondItem="lEm-LA-nkU" secondAttribute="trailing" id="c1a-mE-aCr"/>
+                            <constraint firstItem="FdL-Jj-s5e" firstAttribute="bottom" secondItem="YsV-Kq-YYn" secondAttribute="bottom" id="gMS-EG-JUb"/>
+                            <constraint firstItem="zXo-qh-r6F" firstAttribute="leading" secondItem="nTw-eh-4n3" secondAttribute="leading" id="n0l-ie-afJ"/>
+                            <constraint firstItem="lEm-LA-nkU" firstAttribute="leading" secondItem="TMa-yC-jCg" secondAttribute="leading" constant="20" id="sw2-uP-uXq"/>
+                            <constraint firstItem="nTw-eh-4n3" firstAttribute="top" secondItem="agr-sv-aBe" secondAttribute="bottom" constant="50" id="tPp-QR-klZ"/>
+                            <constraint firstItem="FdL-Jj-s5e" firstAttribute="leading" secondItem="YsV-Kq-YYn" secondAttribute="leading" id="u4I-6a-W9w"/>
+                            <constraint firstItem="FdL-Jj-s5e" firstAttribute="top" secondItem="YsV-Kq-YYn" secondAttribute="top" id="u9i-uq-ray"/>
+                            <constraint firstItem="FNl-XV-b9w" firstAttribute="top" secondItem="so9-Jl-7XL" secondAttribute="top" id="vjI-PJ-zyg"/>
+                            <constraint firstItem="zXo-qh-r6F" firstAttribute="trailing" secondItem="nTw-eh-4n3" secondAttribute="trailing" id="wpn-ht-5xk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5r-wQ-3kH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1599" y="2058"/>
+        </scene>
+        <!--University Data View Controller-->
+        <scene sceneID="rtm-yy-Wsy">
+            <objects>
+                <viewController storyboardIdentifier="UniversityDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2H4-Rv-4bn" customClass="UniversityDataViewController" customModule="CareerGuidance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SXZ-Ao-r9k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universities Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAa-99-mY0">
+                                <rect key="frame" x="71" y="74" width="272.5" height="40.5"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="36"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fo3-aQ-aFn">
+                                <rect key="frame" x="0.0" y="144.5" width="414" height="717.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="UniversityDataTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UniversityDataTableViewCell" rowHeight="350" id="fwi-mO-5dw" customClass="UniversityDataTableViewCell" customModule="CareerGuidance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="350"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fwi-mO-5dw" id="YMX-Iu-f7R">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jcV-kn-NIB">
+                                                    <rect key="frame" x="10" y="11" width="394" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="hgt-As-C8V"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admission Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpB-U4-jZI">
+                                                    <rect key="frame" x="10" y="52" width="127" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="IcI-ic-2IX"/>
+                                                        <constraint firstAttribute="width" constant="127" id="lwA-YL-HRx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11 August 2023 - 21 August 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XXU-Np-vFg">
+                                                    <rect key="frame" x="145" y="54.5" width="259" height="16"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNH-0n-fhB">
+                                                    <rect key="frame" x="10" y="93" width="394" height="237"/>
+                                                    <string key="text">The University of Karachi is one of the largest universities in Pakistan, and admission to its programs is highly competitive. In order to be eligible for admission to UOK, students must meet the following criteria: • A minimum of 50% marks in Intermediate/A-level examinations, or an equivalent qualification • A minimum of 45% marks in Secondary School Certificate (SSC) examinations, or an equivalent qualification • A pass in the UOK Entrance Examination with a minimum score of 60% Meeting these criteria does not guarantee admission as the selection is based on merit. However, meeting the eligibility requirements is necessary in order to be considered for admission. For more information on the UOK admission process, please visit the university's website.</string>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MpB-U4-jZI" firstAttribute="top" secondItem="jcV-kn-NIB" secondAttribute="bottom" constant="20" id="0kf-6D-9Wk"/>
+                                                <constraint firstAttribute="trailing" secondItem="jcV-kn-NIB" secondAttribute="trailing" constant="10" id="4tx-Eq-WWk"/>
+                                                <constraint firstAttribute="trailing" secondItem="XNH-0n-fhB" secondAttribute="trailing" constant="10" id="A1x-bb-Upd"/>
+                                                <constraint firstItem="XXU-Np-vFg" firstAttribute="centerY" secondItem="MpB-U4-jZI" secondAttribute="centerY" id="BOl-yJ-bdb"/>
+                                                <constraint firstItem="jcV-kn-NIB" firstAttribute="leading" secondItem="YMX-Iu-f7R" secondAttribute="leading" constant="10" id="D0F-A6-BBz"/>
+                                                <constraint firstItem="XNH-0n-fhB" firstAttribute="top" secondItem="MpB-U4-jZI" secondAttribute="bottom" constant="20" id="FMb-as-cVc"/>
+                                                <constraint firstAttribute="trailing" secondItem="XXU-Np-vFg" secondAttribute="trailing" constant="10" id="Ft3-vJ-VkG"/>
+                                                <constraint firstItem="XNH-0n-fhB" firstAttribute="leading" secondItem="YMX-Iu-f7R" secondAttribute="leading" constant="10" id="UH4-Vd-jL6"/>
+                                                <constraint firstAttribute="bottom" secondItem="XNH-0n-fhB" secondAttribute="bottom" constant="20" id="X2C-o7-HAl"/>
+                                                <constraint firstItem="XXU-Np-vFg" firstAttribute="leading" secondItem="MpB-U4-jZI" secondAttribute="trailing" constant="8" id="iCz-S5-KEq"/>
+                                                <constraint firstItem="MpB-U4-jZI" firstAttribute="leading" secondItem="jcV-kn-NIB" secondAttribute="leading" id="iOW-uA-Qs0"/>
+                                                <constraint firstItem="jcV-kn-NIB" firstAttribute="top" secondItem="YMX-Iu-f7R" secondAttribute="topMargin" id="kVq-6s-blf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblDateOfAdmission" destination="XXU-Np-vFg" id="9Xb-Mj-E9u"/>
+                                            <outlet property="lblUniversityDescription" destination="XNH-0n-fhB" id="hZ0-GB-baB"/>
+                                            <outlet property="lblUniversityName" destination="jcV-kn-NIB" id="M43-k4-DbT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2H4-Rv-4bn" id="HeP-ds-fka"/>
+                                    <outlet property="delegate" destination="2H4-Rv-4bn" id="kiA-tG-wpu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ORN-pG-Nc2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fo3-aQ-aFn" firstAttribute="leading" secondItem="ORN-pG-Nc2" secondAttribute="leading" id="1hw-hq-cGW"/>
+                            <constraint firstItem="UAa-99-mY0" firstAttribute="centerX" secondItem="SXZ-Ao-r9k" secondAttribute="centerX" id="Q4h-Qe-huD"/>
+                            <constraint firstItem="ORN-pG-Nc2" firstAttribute="bottom" secondItem="fo3-aQ-aFn" secondAttribute="bottom" id="U5v-JY-w9n"/>
+                            <constraint firstItem="UAa-99-mY0" firstAttribute="top" secondItem="ORN-pG-Nc2" secondAttribute="top" constant="30" id="VEb-qs-sf4"/>
+                            <constraint firstItem="fo3-aQ-aFn" firstAttribute="top" secondItem="UAa-99-mY0" secondAttribute="bottom" constant="30" id="cJT-yQ-8ri"/>
+                            <constraint firstItem="ORN-pG-Nc2" firstAttribute="trailing" secondItem="fo3-aQ-aFn" secondAttribute="trailing" id="uEC-RL-bCF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fo3-aQ-aFn" id="dkC-wE-g0V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jFL-Ha-XeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2271" y="2058"/>
         </scene>
     </scenes>
     <resources>

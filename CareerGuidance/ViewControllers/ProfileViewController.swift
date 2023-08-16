@@ -12,7 +12,6 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var txtFieldFullName: UITextField!
     @IBOutlet weak var txtFieldHSSC: UITextField!
-    
     @IBOutlet weak var txtFieldInterest: UITextField!
     @IBOutlet weak var txtFieldPercentageHSSC: UITextField!
     @IBOutlet weak var txtFieldCore1: UITextField!
@@ -39,6 +38,7 @@ class ProfileViewController: UIViewController{
         txtFieldHSSC.inputView = pickerView
         txtFieldInterest.inputView = pickerView
         
+        
         txtFieldCore1.keyboardType = .numberPad
         txtfieldCore2.keyboardType = .numberPad
         txtfieldCore3.keyboardType = .numberPad
@@ -61,7 +61,9 @@ class ProfileViewController: UIViewController{
         
         txtFieldInterest.inputAccessoryView = toolbar
         txtFieldInterest.delegate = self
+        
     }
+    
     
     
     @objc func didTapDone() {
@@ -83,51 +85,61 @@ class ProfileViewController: UIViewController{
     }
     @IBAction func btnYesClicked(_ sender: UIButton) {
         
-//        if txtFieldFullName.text?.isEmpty ?? true || txtFieldInterest.text?.isEmpty ?? true || txtFieldHSSC.text?.isEmpty ?? true || txtFieldPercentageHSSC.text?.isEmpty ?? true{
-//            
-//            showAlert(AlertTytle: "Alert", AlertMessage: "Please profile all information")
-//        }
-//        
-//        else{
-//            let firebaseAuth = Auth.auth()
-//            let firebaseStore = Firestore.firestore()
-//            let storage = Storage.storage()
-//            var userProfileData = [
-//                "name": txtFieldFullName.text!,
-//                "interest": txtFieldInterest.text!,
-//                "HSSC":txtFieldHSSC.text!,
-//                "percentage_HSSC": txtFieldPercentageHSSC.text!,
-//                "isProfileComplete": true
-//            ] as [String : Any]
-//            
-//            let uid = firebaseAuth.currentUser?.uid ?? ""
-//            
-//            let imageData = imageView.image?.pngData() ?? Data()
-//            let reference  = storage.reference().child("DisplayPicture/\(uid).png")
-//            _ = reference.putData(imageData, metadata: nil) { (metadata, error) in
-//                guard metadata != nil else {
-//                    // Uh-oh, an error occurred!
-//                    return
-//                }
-//                
-//                reference.downloadURL { (url, error) in
-//                    
-//                    if error != nil {
-////                        self.showAlert(AlertTytle: "Error", AlertMessage: err.localizedDescription)
-//                    }else{
-//                        userProfileData["imageUrl"] = url
-//                    }
-//                    
-//                }
-//            }
-//            
-//            if(uid != ""){
-//                firebaseStore.collection("user").document(uid).setData(userProfileData, merge: true)
-//            }
+        if txtFieldFullName.text?.isEmpty ?? true || txtFieldInterest.text?.isEmpty ?? true || txtFieldHSSC.text?.isEmpty ?? true || txtFieldPercentageHSSC.text?.isEmpty ?? true || txtFieldCore1.text?.isEmpty == true || txtfieldCore2.text?.isEmpty == true || txtfieldCore3.text?.isEmpty == true{
+            
+            showAlert(AlertTytle: "Alert", AlertMessage: "Please provide all information")
+        }
+        else if (txtFieldCore1.text! <= "\(30)" && txtFieldCore1.text! > "\(100)" || txtfieldCore2.text! <= "\(30)" && txtfieldCore2.text! > "\(100)" || txtfieldCore3.text! <= "\(30)") && txtfieldCore3.text! > "\(100)"{
+            
+            showAlert(AlertTytle: "Alert", AlertMessage: "Your core subject marks are low or not applicable on the basis of which you cannot get admission in the university.")
+        }
+        
+        else if (txtFieldPercentageHSSC.text! <= "\(30)") && txtFieldPercentageHSSC.text! > "\(100)" {
+            
+            showAlert(AlertTytle: "Alert", AlertMessage: "Your HSSC percentage is low or not applicable on the basis of which you cannot get admission in the university.")
+            
+        }
+        
+        else{
+            let firebaseAuth = Auth.auth()
+            let firebaseStore = Firestore.firestore()
+            let storage = Storage.storage()
+            var userProfileData = [
+                "name": txtFieldFullName.text!,
+                "interest": txtFieldInterest.text!,
+                "HSSC":txtFieldHSSC.text!,
+                "percentage_HSSC": txtFieldPercentageHSSC.text!,
+                "isProfileComplete": true
+            ] as [String : Any]
+            
+            let uid = firebaseAuth.currentUser?.uid ?? ""
+            
+            let imageData = imageView.image?.pngData() ?? Data()
+            let reference  = storage.reference().child("DisplayPicture/\(uid).png")
+            _ = reference.putData(imageData, metadata: nil) { (metadata, error) in
+                guard metadata != nil else {
+                    // Uh-oh, an error occurred!
+                    return
+                }
+                
+                reference.downloadURL { (url, error) in
+                    
+                    if error != nil {
+                        //                        self.showAlert(AlertTytle: "Error", AlertMessage: error?.localizedDescription ?? error)
+                    }else{
+                        userProfileData["imageUrl"] = url
+                    }
+                    
+                }
+            }
+            
+            if(uid != ""){
+                firebaseStore.collection("user").document(uid).setData(userProfileData, merge: true)
+            }
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
             vc.image = imageView.image
             self.navigationController?.pushViewController(vc, animated: true)
-        //}
+        }
     }
     
     

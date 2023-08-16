@@ -16,6 +16,9 @@
 		714949F62A3505ED00DF35A7 /* QuestionDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */; };
 		7149F26F2A3106BF00FF5B14 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7149F26E2A3106BF00FF5B14 /* Constant.swift */; };
 		7149F2712A310A4F00FF5B14 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7149F2702A310A4F00FF5B14 /* MapViewController.swift */; };
+		715170602A7105EC00B699A9 /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151705F2A7105EC00B699A9 /* UniversityData.swift */; };
+		715170622A71067600B699A9 /* UniversityDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715170612A71067600B699A9 /* UniversityDataViewController.swift */; };
+		715170642A710BB300B699A9 /* UniversityDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715170632A710BB300B699A9 /* UniversityDataTableViewCell.swift */; };
 		715F9D2529F45BE60060BE9B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F9D2429F45BE60060BE9B /* ForgotPasswordViewController.swift */; };
 		715F9D2729F473DE0060BE9B /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F9D2629F473DE0060BE9B /* VerificationCodeViewController.swift */; };
 		715F9D2929F476BF0060BE9B /* Verificationcodegenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F9D2829F476BF0060BE9B /* Verificationcodegenerator.swift */; };
@@ -35,6 +38,8 @@
 		719E9A282A1413DA00316083 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E9A272A1413DA00316083 /* ScoreViewController.swift */; };
 		71B14D5C2A0C22DB00203316 /* CreateNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B14D5B2A0C22DB00203316 /* CreateNewPasswordViewController.swift */; };
 		71B14D5E2A0C317500203316 /* AptitudeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B14D5D2A0C317500203316 /* AptitudeTestViewController.swift */; };
+		71BCBB8A2A5B41DD00A4D5E6 /* EcatBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BCBB892A5B41DD00A4D5E6 /* EcatBooksViewController.swift */; };
+		71BCBB8C2A5B51E800A4D5E6 /* McatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BCBB8B2A5B51E800A4D5E6 /* McatViewController.swift */; };
 		71E88A7629C0F7AB0001F1DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E88A7529C0F7AB0001F1DB /* AppDelegate.swift */; };
 		71E88A7829C0F7AB0001F1DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E88A7729C0F7AB0001F1DB /* SceneDelegate.swift */; };
 		71E88A7D29C0F7AB0001F1DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E88A7B29C0F7AB0001F1DB /* Main.storyboard */; };
@@ -52,6 +57,9 @@
 		714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataClass.swift; sourceTree = "<group>"; };
 		7149F26E2A3106BF00FF5B14 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		7149F2702A310A4F00FF5B14 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7151705F2A7105EC00B699A9 /* UniversityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityData.swift; sourceTree = "<group>"; };
+		715170612A71067600B699A9 /* UniversityDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityDataViewController.swift; sourceTree = "<group>"; };
+		715170632A710BB300B699A9 /* UniversityDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityDataTableViewCell.swift; sourceTree = "<group>"; };
 		715F9D2429F45BE60060BE9B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		715F9D2629F473DE0060BE9B /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
 		715F9D2829F476BF0060BE9B /* Verificationcodegenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verificationcodegenerator.swift; sourceTree = "<group>"; };
@@ -71,6 +79,8 @@
 		719E9A272A1413DA00316083 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		71B14D5B2A0C22DB00203316 /* CreateNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordViewController.swift; sourceTree = "<group>"; };
 		71B14D5D2A0C317500203316 /* AptitudeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AptitudeTestViewController.swift; sourceTree = "<group>"; };
+		71BCBB892A5B41DD00A4D5E6 /* EcatBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcatBooksViewController.swift; sourceTree = "<group>"; };
+		71BCBB8B2A5B51E800A4D5E6 /* McatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = McatViewController.swift; sourceTree = "<group>"; };
 		71E88A7229C0F7AB0001F1DB /* CareerGuidance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareerGuidance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E88A7529C0F7AB0001F1DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71E88A7729C0F7AB0001F1DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */,
+				7151705F2A7105EC00B699A9 /* UniversityData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,6 +120,7 @@
 			children = (
 				716F18892A1153A000319BA4 /* PastPapersTableViewCell.swift */,
 				7167B13E2A2370F300245E81 /* MCQsTableViewCell.swift */,
+				715170632A710BB300B699A9 /* UniversityDataTableViewCell.swift */,
 			);
 			path = TableViews;
 			sourceTree = "<group>";
@@ -140,6 +152,7 @@
 				71167BA829CE50BE00FD42A3 /* ExtentionOfViewController.swift */,
 				71976DE82A292B5600C81F86 /* DropdownPickerDelegate.swift */,
 				715F9D2829F476BF0060BE9B /* Verificationcodegenerator.swift */,
+				716F188B2A1153AA00319BA4 /* TableViews */,
 				71E88A8929C102440001F1DB /* ViewControllers */,
 				71E88A7529C0F7AB0001F1DB /* AppDelegate.swift */,
 				71E88A7729C0F7AB0001F1DB /* SceneDelegate.swift */,
@@ -174,7 +187,9 @@
 				7184119E2A1CAA2D00FA198F /* PreMedicalViewController.swift */,
 				7167B13C2A236F8F00245E81 /* MCQsViewController.swift */,
 				7149F2702A310A4F00FF5B14 /* MapViewController.swift */,
-				716F188B2A1153AA00319BA4 /* TableViews */,
+				71BCBB892A5B41DD00A4D5E6 /* EcatBooksViewController.swift */,
+				71BCBB8B2A5B51E800A4D5E6 /* McatViewController.swift */,
+				715170612A71067600B699A9 /* UniversityDataViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -331,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				715F9D2529F45BE60060BE9B /* ForgotPasswordViewController.swift in Sources */,
+				715170642A710BB300B699A9 /* UniversityDataTableViewCell.swift in Sources */,
 				7184119D2A1CAA2100FA198F /* PreEngViewController.swift in Sources */,
 				71167BA929CE50BE00FD42A3 /* ExtentionOfViewController.swift in Sources */,
 				719E9A282A1413DA00316083 /* ScoreViewController.swift in Sources */,
@@ -340,8 +356,11 @@
 				715F9D2729F473DE0060BE9B /* VerificationCodeViewController.swift in Sources */,
 				7128EC0D2A1178A1005096AC /* UniversityUpdatesViewController.swift in Sources */,
 				71651E372A0D84CD0028E85F /* BooksViewController.swift in Sources */,
+				71BCBB8A2A5B41DD00A4D5E6 /* EcatBooksViewController.swift in Sources */,
+				715170602A7105EC00B699A9 /* UniversityData.swift in Sources */,
 				718FC30F29C54F83008E048D /* LoginViewController.swift in Sources */,
 				7184119B2A1CA6C100FA198F /* CareerOptionsViewController.swift in Sources */,
+				715170622A71067600B699A9 /* UniversityDataViewController.swift in Sources */,
 				71E88A8B29C1025F0001F1DB /* SignUpViewCintroller.swift in Sources */,
 				7184119F2A1CAA2D00FA198F /* PreMedicalViewController.swift in Sources */,
 				7197AC6C2A0CD34D00B740D5 /* DashboardViewController.swift in Sources */,
@@ -358,6 +377,7 @@
 				7167B13D2A236F9000245E81 /* MCQsViewController.swift in Sources */,
 				71087C1B2A1C026A00FB4F07 /* ISSBTestViewController.swift in Sources */,
 				71976DE92A292B5600C81F86 /* DropdownPickerDelegate.swift in Sources */,
+				71BCBB8C2A5B51E800A4D5E6 /* McatViewController.swift in Sources */,
 				7149F2712A310A4F00FF5B14 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

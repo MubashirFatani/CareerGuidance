@@ -68,6 +68,12 @@ class ScoreViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func showUniversities(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "UniversityDataViewController") as! UniversityDataViewController
+        vc.studentPercentage = score
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func startProgressAtRatio() {
         v = 0.0
         

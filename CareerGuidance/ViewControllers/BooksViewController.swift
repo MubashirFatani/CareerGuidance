@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class BooksViewController: UIViewController {
 
     @IBOutlet weak var mcatView: UIView!
@@ -54,9 +55,16 @@ class BooksViewController: UIViewController {
     }
     
     @IBAction func btnEcatClicked(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EcatBooksViewController")as! EcatBooksViewController
+            
+        self.navigationController?.pushViewController(vc, animated: true)
+            
+        
     }
     @IBAction func btnMcatClicked(_ sender: UIButton) {
+      pushToVC(withIdentifier: "McatBooksViewController")
     }
+    
     @IBAction func btnBcatClicked(_ sender: UIButton) {
     }
     

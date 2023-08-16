@@ -12,6 +12,7 @@ extension UIViewController: UITextFieldDelegate{
     
     func showAlert(AlertTytle: String, AlertMessage: String){
          let alert = UIAlertController(title: AlertTytle, message: AlertMessage, preferredStyle: .alert)
+        
          let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
          alert.addAction(alertAction)
         self.present(alert, animated: true, completion: nil)
@@ -27,4 +28,10 @@ extension UIViewController: UITextFieldDelegate{
         return true
     }
         
+    func pushToVC(withIdentifier identifier: String){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: identifier)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
