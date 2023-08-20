@@ -15,9 +15,14 @@ enum AptitudeTestType {
 
 class MCQsViewController: UIViewController {
     
+    @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var questionsArray: [QuestionDataClass] = []
     var testType: AptitudeTestType!
+    var hsscPercentage: Double = 0.0
+    
+    var count = 1800
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +40,24 @@ class MCQsViewController: UIViewController {
             self.tableView.tableFooterView = button
         }
         getQuestions()
+    }
+    
+    func startTimer() {
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer() {
+
+        if(count > 0){
+            let minutes = String(format: "%.2d", count / 60)
+            let seconds = String(format: "%.2d", count % 60)
+            lblTime.text = minutes + ":" + seconds
+            count -= 1
+        }
+        else {
+            btnSubmitTapped()
+        }
     }
     
     func getQuestions() {
@@ -74,7 +97,9 @@ class MCQsViewController: UIViewController {
                     print("Error decoding user: \(error)")
                 }
             }
+            self.questionsArray.shuffle()
             self.tableView.reloadData()
+            self.startTimer()
         }
     }
     
@@ -91,8 +116,8 @@ class MCQsViewController: UIViewController {
             }
         }
         
-        let percentage = (Double(correctAnswer) / Double(questionsArray.count)) * 100.0
-        return percentage
+        let ecatPercentage = (Double(correctAnswer) / Double(questionsArray.count)) * 100.0
+        return (ecatPercentage * 0.55) + (hsscPercentage * 0.45)
     }
     
     @objc func btnSubmitTapped() {

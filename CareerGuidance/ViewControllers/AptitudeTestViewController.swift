@@ -8,6 +8,8 @@
 import UIKit
 
 class AptitudeTestViewController: UIViewController {
+    
+    var hsscPercentage = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,9 @@ class AptitudeTestViewController: UIViewController {
     func showOptions() {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "MCQsViewController") as! MCQsViewController
+        if let hsscPercent = Double(hsscPercentage) {
+            vc.hsscPercentage = hsscPercent
+        }
         
         let alert = UIAlertController(title: "Aptitude Test", message: "Which test you want to give?", preferredStyle: .alert)
         

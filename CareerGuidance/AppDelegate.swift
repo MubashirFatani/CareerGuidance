@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = false // Optional: disable toolbar
-        // Define the font you want to use
         let myFont = UIFont(name: "Arial", size: 16)
 
         // Set the default appearance for all UILabels

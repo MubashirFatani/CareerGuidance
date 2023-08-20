@@ -17,6 +17,9 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var ISSBView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userImage: UIImageView!
+    
+    var hsscPercentage = ""
+    
     var image: UIImage?
     
     override func viewDidLoad() {
@@ -86,6 +89,7 @@ class DashboardViewController: UIViewController {
     
     @IBAction func btnAptitudeTapped(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AptitudeTestViewController")as! AptitudeTestViewController
+        vc.hsscPercentage = hsscPercentage
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

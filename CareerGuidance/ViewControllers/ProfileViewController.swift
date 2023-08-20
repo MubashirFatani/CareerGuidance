@@ -137,6 +137,7 @@ class ProfileViewController: UIViewController{
                 firebaseStore.collection("user").document(uid).setData(userProfileData, merge: true)
             }
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+            vc.hsscPercentage = txtFieldPercentageHSSC.text!
             vc.image = imageView.image
             self.navigationController?.pushViewController(vc, animated: true)
         }

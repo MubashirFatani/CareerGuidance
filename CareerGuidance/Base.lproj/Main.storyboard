@@ -2667,6 +2667,12 @@ Mechanical engineering, in its most basic form, is the application of engineerin
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uK-Oy-lJo">
+                                <rect key="frame" x="328" y="75" width="56" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q7g-Xs-OK6">
                                 <rect key="frame" x="0.0" y="121" width="414" height="741"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2857,13 +2863,16 @@ these absorption bands? </string>
                         <constraints>
                             <constraint firstItem="hsD-Gl-rSq" firstAttribute="bottom" secondItem="Q7g-Xs-OK6" secondAttribute="bottom" id="32G-N4-S5m"/>
                             <constraint firstItem="9dC-DM-jSY" firstAttribute="leading" secondItem="hsD-Gl-rSq" secondAttribute="leading" constant="30" id="3qi-dL-ZhT"/>
+                            <constraint firstItem="hsD-Gl-rSq" firstAttribute="trailing" secondItem="9uK-Oy-lJo" secondAttribute="trailing" constant="30" id="8zO-V6-yPv"/>
                             <constraint firstItem="9dC-DM-jSY" firstAttribute="top" secondItem="hsD-Gl-rSq" secondAttribute="top" constant="30" id="9Tl-hA-aJQ"/>
+                            <constraint firstItem="9uK-Oy-lJo" firstAttribute="centerY" secondItem="9dC-DM-jSY" secondAttribute="centerY" id="Xbb-Ge-Lft"/>
                             <constraint firstItem="Q7g-Xs-OK6" firstAttribute="leading" secondItem="hsD-Gl-rSq" secondAttribute="leading" id="aCW-oX-r6C"/>
                             <constraint firstItem="Q7g-Xs-OK6" firstAttribute="top" secondItem="9dC-DM-jSY" secondAttribute="bottom" constant="20" id="uc9-TL-OFL"/>
                             <constraint firstItem="hsD-Gl-rSq" firstAttribute="trailing" secondItem="Q7g-Xs-OK6" secondAttribute="trailing" id="zcz-c7-NMG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblTime" destination="9uK-Oy-lJo" id="XGa-2w-83n"/>
                         <outlet property="tableView" destination="Q7g-Xs-OK6" id="X1d-OB-0Nh"/>
                     </connections>
                 </viewController>
