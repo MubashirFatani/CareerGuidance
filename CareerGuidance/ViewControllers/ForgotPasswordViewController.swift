@@ -54,3 +54,6 @@ class ForgotPasswordViewController: UIViewController {
 
                 }
             }
+        }
+    }
+}
