@@ -61,13 +61,7 @@ class UniversityUpdatesViewController: UIViewController {
     }
     @IBAction func btnLocationTapped(_ sender: UIButton) {
        locationManager.requestLocation()
-//        let searchQuery = "Nearest Universities"
-//
-//        let encodedQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-//        let mapURLString = "http://maps.apple.com/?q=\(encodedQuery)"
-//        let mapURL = URL(string: mapURLString)!
-//
-//        UIApplication.shared.open(mapURL, options: [:], completionHandler: nil)
+
     }
     @IBAction func btnUniversitiesData(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "UniversityDataViewController")as! UniversityDataViewController
@@ -96,45 +90,5 @@ extension UniversityUpdatesViewController: CLLocationManagerDelegate {
        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
            print("Failed to retrieve user's location: \(error.localizedDescription)")
        }
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//        if let location = locations.first {
-//            //let latitude = location.coordinate.latitude
-//            //let longitude = location.coordinate.longitude
-//
-//            let request = MKLocalSearch.Request()
-//            request.naturalLanguageQuery = "universities"
-//            request.region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-//
-//            let search = MKLocalSearch(request: request)
-//            search.start { (response, error) in
-//                guard let response = response else {
-//                    print("Failed to retrieve universities: \(error?.localizedDescription ?? "")")
-//                    return
-//                }
-//
-//                let mapItems = response.mapItems
-//
-//                if mapItems.isEmpty {
-//                    print("No universities found.")
-//                    return
-//                }
-//
-//                var mapItemsURLs: [URL] = []
-//                for mapItem in mapItems {
-//                    if let url = mapItem.url {
-//                        mapItemsURLs.append(url)
-//                    }
-//                }
-//
-//                if let nearestUniversityURL = mapItemsURLs.first {
-//                    UIApplication.shared.open(nearestUniversityURL, options: [:], completionHandler: nil)
-//                }
-//            }
-//        }
-//    }
-//
-//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        print("Failed to retrieve user's location: \(error.localizedDescription)")
-//    }
+
 }
