@@ -19,5 +19,8 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'RealmSwift'
+pod 'Alamofire', '5.8.0'
+pod 'SDWebImage'
 
 end

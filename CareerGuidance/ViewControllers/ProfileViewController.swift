@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var core2View: UIView!
     @IBOutlet weak var core3View: UIView!
     
+    var userModel: UserDataClass?
     let dropdownDelegate = DropdownPickerDelegate()
     let pickerView = UIPickerView()
     
@@ -29,8 +30,8 @@ class ProfileViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUserData()
         profileView.layer.cornerRadius = profileView.frame.height/2
-        
         
         pickerView.delegate = dropdownDelegate
         pickerView.dataSource = dropdownDelegate
@@ -64,7 +65,14 @@ class ProfileViewController: UIViewController{
         
     }
     
-    
+    func setUserData() {
+        if let user = userModel {
+            txtFieldFullName.text = user.username
+            txtFieldPercentageHSSC.text = user.percentage_HSSC
+            txtFieldInterest.text = user.interest
+            txtFieldHSSC.text = user.HSSC
+        }
+    }
     
     @objc func didTapDone() {
         let selectedRow = pickerView.selectedRow(inComponent: 0)
@@ -139,7 +147,9 @@ class ProfileViewController: UIViewController{
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
             vc.hsscPercentage = txtFieldPercentageHSSC.text!
             vc.image = imageView.image
+            vc.passedUserName = txtFieldFullName.text!
             self.navigationController?.pushViewController(vc, animated: true)
+            
         }
     }
     

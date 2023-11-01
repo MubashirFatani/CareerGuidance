@@ -17,8 +17,11 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var ISSBView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var lblUserName: UILabel!
     
     var hsscPercentage = ""
+    var passedUserName = ""
+    var userModel: UserDataClass?
     
     var image: UIImage?
     
@@ -29,6 +32,7 @@ class DashboardViewController: UIViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight))
            swipeRight.direction = .right
            view.addGestureRecognizer(swipeRight)
+        lblUserName.text = passedUserName
     }
     
     @objc func swipedRight() {
@@ -36,8 +40,12 @@ class DashboardViewController: UIViewController {
     }
     
     func setViews(){
-        userImage.image = image
-        userImage.layer.cornerRadius = 12 
+        if image != nil {
+            userImage.image = image
+        }
+        userImage.isUserInteractionEnabled = true
+        userImage.layer.cornerRadius = 12
+        userImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileTapped)))
         preparationView.layer.cornerRadius = 15
         universityView.layer.cornerRadius = 15
         scoreView.layer.cornerRadius = 15
@@ -112,10 +120,14 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func btnISSBTapped(_ sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ISSBTestViewController")as! ISSBTestViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ISSBPastPapersViewController")as! ISSBPastPapersViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
+    @objc func profileTapped() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        vc.userModel = userModel
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

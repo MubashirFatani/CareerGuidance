@@ -30,12 +30,17 @@ class MCQsTableViewCell: UITableViewCell {
     @IBOutlet weak var option4View: UIView!
     @IBOutlet weak var imgOption4: UIImageView!
     @IBOutlet weak var lblOption4: UILabel!
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnPrevious: UIButton!
+    
     
     weak var delegate: MCQsTableViewCellDelegate?
     var indexPath = IndexPath()
+    var selectedAnswerIndex: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        updateButtonStates()
         
         option1View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(answer1Tapped)))
         option2View.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(answer2Tapped)))
@@ -48,6 +53,14 @@ class MCQsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func updateButtonStates() {
+        imgOption1.image = UIImage(named: (selectedAnswerIndex == 0) ? "radioSelected" : "radioUnselected")
+        imgOption2.image = UIImage(named: (selectedAnswerIndex == 1) ? "radioSelected" : "radioUnselected")
+        imgOption3.image = UIImage(named: (selectedAnswerIndex == 2) ? "radioSelected" : "radioUnselected")
+        imgOption4.image = UIImage(named: (selectedAnswerIndex == 3) ? "radioSelected" : "radioUnselected")
+    }
+
     
     @objc func answer1Tapped() {
         self.delegate?.answerViewTapped(ansOption: 1, indexPath: indexPath)

@@ -17,12 +17,16 @@ class MCQsViewController: UIViewController {
     
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnSubmit: UIButton!
+    
     var questionsArray: [QuestionDataClass] = []
     var testType: AptitudeTestType!
     var hsscPercentage: Double = 0.0
     
     var count = 1800
     var timer = Timer()
+    
+    var questionIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +35,6 @@ class MCQsViewController: UIViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight))
         swipeRight.direction = .right
         view.addGestureRecognizer(swipeRight)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            let button = UIButton(type: .system)
-            button.setTitle("SUBMIT", for: .normal)
-            button.addTarget(self, action: #selector(self.btnSubmitTapped), for: .touchUpInside)
-            button.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width * 0.4, height: 50)
-            self.tableView.tableFooterView = button
-        }
         getQuestions()
     }
     
@@ -56,7 +52,7 @@ class MCQsViewController: UIViewController {
             count -= 1
         }
         else {
-            btnSubmitTapped()
+            showResult()
         }
     }
     
@@ -120,26 +116,43 @@ class MCQsViewController: UIViewController {
         return (ecatPercentage * 0.55) + (hsscPercentage * 0.45)
     }
     
-    @objc func btnSubmitTapped() {
+    func showResult() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ScoreViewController")as! ScoreViewController
         vc.score = calculateResult()
         self.navigationController?.pushViewController(vc, animated: true)
-        
+    }
+    
+    @IBAction func btnPrevTapped(_ sender: UIButton) {
+        if questionIndex > 0 {
+            questionIndex -= 1
+            tableView.reloadData()
+        }
+    }
+    
+    @IBAction func btnNextTapped(_ sender: UIButton) {
+        if questionIndex < questionsArray.count - 1 {
+            questionIndex += 1
+            tableView.reloadData()
+        }
+    }
+    
+    @IBAction func btnSubmitTapped(_ sender: UIButton) {
+        showResult()
     }
 }
 
 extension MCQsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionsArray.count
+        return questionsArray.count > 0 ? 1 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MCQsTableViewCell", for: indexPath) as! MCQsTableViewCell
         
-        let question = questionsArray[indexPath.row]
+        let question = questionsArray[questionIndex]
         
-        cell.lblQuestion.text = question.questions
+        cell.lblQuestion.text = "\(questionIndex + 1). \(question.questions)"
         cell.lblOption1.text = question.answers[0]
         cell.lblOption2.text = question.answers[1]
         cell.lblOption3.text = question.answers[2]
@@ -153,6 +166,7 @@ extension MCQsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.imgOption3.image = UIImage(named:  question.userSelectedAnswerIndex == 2 ? "radioSelected" : "radioUnselected")
         cell.imgOption4.image = UIImage(named:  question.userSelectedAnswerIndex == 3 ? "radioSelected" : "radioUnselected")
         
+        btnSubmit.isHidden = questionIndex != questionsArray.count - 1
         return cell
     }
     
@@ -164,11 +178,10 @@ extension MCQsViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MCQsViewController: MCQsTableViewCellDelegate {
     func answerViewTapped(ansOption: Int, indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! MCQsTableViewCell
-        var question = self.questionsArray[indexPath.row]
+        var question = self.questionsArray[questionIndex]
         question.userSelectedAnswer = question.answers[ansOption - 1]
         question.userSelectedAnswerIndex = ansOption - 1
-        questionsArray[indexPath.row] = question
+        questionsArray[questionIndex] = question
         self.tableView.reloadData()
     }
 }

@@ -54,15 +54,3 @@ class ForgotPasswordViewController: UIViewController {
 
                 }
             }
-            
-//            let alert = UIAlertController(title: "Check your Email", message: "Please check your email for password reset link!", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "Ok", style: .default) { action in
-////                let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerificationCodeViewController") as! VerificationCodeViewController
-////                self.navigationController?.pushViewController(vc, animated: true)
-//            }
-//            alert.addAction(okAction)
-//            self.present(alert, animated: true)
-        }
-    }
-    
-}

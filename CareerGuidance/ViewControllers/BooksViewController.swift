@@ -62,10 +62,7 @@ class BooksViewController: UIViewController {
         
     }
     @IBAction func btnMcatClicked(_ sender: UIButton) {
-      pushToVC(withIdentifier: "McatBooksViewController")
-    }
-    
-    @IBAction func btnBcatClicked(_ sender: UIButton) {
+      pushToVC(withIdentifier: "McatViewController")
     }
     
 

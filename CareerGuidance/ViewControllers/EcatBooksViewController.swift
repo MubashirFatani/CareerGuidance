@@ -12,8 +12,17 @@ class EcatBooksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+        
         
     }
+    
+    @objc func swipedRight() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func btnMathsClick(_ sender: UIButton) {
         guard let url = URL(string: "https://drive.google.com/uc?export=download&id=1lkUI5vbio5WGYtNAvfbgMVblUy4gpbX0") else {
                    return

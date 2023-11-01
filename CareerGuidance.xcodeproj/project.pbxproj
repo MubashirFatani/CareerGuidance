@@ -16,6 +16,7 @@
 		714949F62A3505ED00DF35A7 /* QuestionDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */; };
 		7149F26F2A3106BF00FF5B14 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7149F26E2A3106BF00FF5B14 /* Constant.swift */; };
 		7149F2712A310A4F00FF5B14 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7149F2702A310A4F00FF5B14 /* MapViewController.swift */; };
+		714FE41B2AAA63E4006BFFB5 /* UserDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714FE41A2AAA63E4006BFFB5 /* UserDataClass.swift */; };
 		715170602A7105EC00B699A9 /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151705F2A7105EC00B699A9 /* UniversityData.swift */; };
 		715170622A71067600B699A9 /* UniversityDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715170612A71067600B699A9 /* UniversityDataViewController.swift */; };
 		715170642A710BB300B699A9 /* UniversityDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715170632A710BB300B699A9 /* UniversityDataTableViewCell.swift */; };
@@ -29,6 +30,7 @@
 		716ABC032A22A68F0011C420 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 716ABC022A22A68F0011C420 /* GoogleService-Info.plist */; };
 		716F18882A11320E00319BA4 /* PastPapersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F18872A11320E00319BA4 /* PastPapersViewController.swift */; };
 		716F188A2A1153A000319BA4 /* PastPapersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F18892A1153A000319BA4 /* PastPapersTableViewCell.swift */; };
+		7180B8B72AAB0AC100FC87CC /* ISSBPastPapersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180B8B62AAB0AC100FC87CC /* ISSBPastPapersViewController.swift */; };
 		7184119B2A1CA6C100FA198F /* CareerOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7184119A2A1CA6C100FA198F /* CareerOptionsViewController.swift */; };
 		7184119D2A1CAA2100FA198F /* PreEngViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7184119C2A1CAA2100FA198F /* PreEngViewController.swift */; };
 		7184119F2A1CAA2D00FA198F /* PreMedicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7184119E2A1CAA2D00FA198F /* PreMedicalViewController.swift */; };
@@ -57,6 +59,7 @@
 		714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataClass.swift; sourceTree = "<group>"; };
 		7149F26E2A3106BF00FF5B14 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		7149F2702A310A4F00FF5B14 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		714FE41A2AAA63E4006BFFB5 /* UserDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataClass.swift; sourceTree = "<group>"; };
 		7151705F2A7105EC00B699A9 /* UniversityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityData.swift; sourceTree = "<group>"; };
 		715170612A71067600B699A9 /* UniversityDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityDataViewController.swift; sourceTree = "<group>"; };
 		715170632A710BB300B699A9 /* UniversityDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityDataTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		716ABC022A22A68F0011C420 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		716F18872A11320E00319BA4 /* PastPapersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastPapersViewController.swift; sourceTree = "<group>"; };
 		716F18892A1153A000319BA4 /* PastPapersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastPapersTableViewCell.swift; sourceTree = "<group>"; };
+		7180B8B62AAB0AC100FC87CC /* ISSBPastPapersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSBPastPapersViewController.swift; sourceTree = "<group>"; };
 		7184119A2A1CA6C100FA198F /* CareerOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerOptionsViewController.swift; sourceTree = "<group>"; };
 		7184119C2A1CAA2100FA198F /* PreEngViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreEngViewController.swift; sourceTree = "<group>"; };
 		7184119E2A1CAA2D00FA198F /* PreMedicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreMedicalViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			children = (
 				714949F52A3505ED00DF35A7 /* QuestionDataClass.swift */,
 				7151705F2A7105EC00B699A9 /* UniversityData.swift */,
+				714FE41A2AAA63E4006BFFB5 /* UserDataClass.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				71BCBB892A5B41DD00A4D5E6 /* EcatBooksViewController.swift */,
 				71BCBB8B2A5B51E800A4D5E6 /* McatViewController.swift */,
 				715170612A71067600B699A9 /* UniversityDataViewController.swift */,
+				7180B8B62AAB0AC100FC87CC /* ISSBPastPapersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -370,8 +376,10 @@
 				71E88A7629C0F7AB0001F1DB /* AppDelegate.swift in Sources */,
 				716F188A2A1153A000319BA4 /* PastPapersTableViewCell.swift in Sources */,
 				71E88A7829C0F7AB0001F1DB /* SceneDelegate.swift in Sources */,
+				714FE41B2AAA63E4006BFFB5 /* UserDataClass.swift in Sources */,
 				7149F26F2A3106BF00FF5B14 /* Constant.swift in Sources */,
 				7167B13F2A2370F300245E81 /* MCQsTableViewCell.swift in Sources */,
+				7180B8B72AAB0AC100FC87CC /* ISSBPastPapersViewController.swift in Sources */,
 				71651E352A0D7E3F0028E85F /* PreparationViewController.swift in Sources */,
 				71B14D5C2A0C22DB00203316 /* CreateNewPasswordViewController.swift in Sources */,
 				7167B13D2A236F9000245E81 /* MCQsViewController.swift in Sources */,

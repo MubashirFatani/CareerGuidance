@@ -9,9 +9,10 @@ import UIKit
 import IQKeyboardManagerSwift
 import FirebaseFirestore
 import FirebaseAuth
+import RealmSwift
 
 class LoginViewController: UIViewController{
-
+    
     @IBOutlet weak var lblLogin: UILabel!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var passwordView: UIView!
@@ -24,25 +25,27 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         emailView.layer.cornerRadius = 10
         passwordView.layer.cornerRadius = 10
         btnLogin.layer.cornerRadius = 10
         btnSignUp.layer.borderWidth = 2
         btnSignUp.layer.borderColor = UIColor.white.cgColor
         btnSignUp.layer.cornerRadius = 10
-//      txtFieldEmail.delegate = self
-//      txtFieldPass.delegate = self
-       let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
-           view.addGestureRecognizer(tapGesture)
+        //      txtFieldEmail.delegate = self
+        //      txtFieldPass.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        view.addGestureRecognizer(tapGesture)
     }
     
     @objc func viewTapped() {
         // Dismiss keyboard when tap outside text field
         view.endEditing(true)
     }
-
-     func textFieldDidBeginEditing(_ textField: UITextField) {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         // Open keyboard when text field is tapped
         txtFieldPass.becomeFirstResponder()
     }
@@ -67,20 +70,20 @@ class LoginViewController: UIViewController{
         else{
             
             
-                        UserDefaults.standard.setValue(txtFieldEmail.text!, forKey: "userEmail")
-                       UserDefaults.standard.setValue(txtFieldPass.text!, forKey: "userPassword")
-//            loginUserWithRequest()
+            UserDefaults.standard.setValue(txtFieldEmail.text!, forKey: "userEmail")
+            UserDefaults.standard.setValue(txtFieldPass.text!, forKey: "userPassword")
+            //            loginUserWithRequest()
             
             let firebaseAuth = Auth.auth()
             let firebaseStore = Firestore.firestore()
             do {
-              try firebaseAuth.signOut()
+                try firebaseAuth.signOut()
             } catch let signOutError as NSError {
-              print("Error signing out: %@", signOutError)
+                print("Error signing out: %@", signOutError)
             }
             
             firebaseAuth.signIn(withEmail: txtFieldEmail.text!, password: txtFieldPass.text!) { result, error in
-
+                
                 if let err = error {
                     self.showAlert(AlertTytle: "Error", AlertMessage: err.localizedDescription)
                 }
@@ -88,24 +91,44 @@ class LoginViewController: UIViewController{
                     let uid = firebaseAuth.currentUser?.uid ?? "";
                     if(uid != ""){
                         firebaseStore.collection("user").document(uid).getDocument(completion: { data, err in
-                            print(data?.data()! as Any)
+                            print(data?.data() as Any)
+                            
+                            if let error = err {
+                                print("Error getting user: \(error)")
+                                return
+                            }
+                            
+                            do {
+                                let jsonData = try JSONSerialization.data(withJSONObject: data!.data()!, options: [])
+                                let decoder = JSONDecoder()
+                                let user = try decoder.decode(UserDataClass.self, from: jsonData)
+                                if user.isProfileComplete {
+                                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+                                    vc.userModel = user
+                                    vc.hsscPercentage = user.percentage_HSSC
+                                    vc.passedUserName = user.name
+                                    self.navigationController?.pushViewController(vc, animated: true)
+                                }
+                                else {
+                                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+                                    self.navigationController?.pushViewController(vc, animated: true)
+
+                                }
+                                
+                            } catch {
+                                print("Error decoding user: \(error)")
+                            }
+                            
+                            
                         })
                     }
-                
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-                    self.navigationController?.pushViewController(vc, animated: true)
-
+                                        
                 }
             }
-            
-           
         }
     }
     @IBAction func btnForgotPasswordTapped(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as! ForgotPasswordViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-
-    
 }

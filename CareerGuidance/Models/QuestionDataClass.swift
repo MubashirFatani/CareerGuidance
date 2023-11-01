@@ -16,4 +16,6 @@ struct QuestionDataClass: Decodable {
     let subject: String
     var userSelectedAnswer: String?
     var userSelectedAnswerIndex: Int?
+    var selectedAnswerIndex: Int?
+    
 }

@@ -12,7 +12,13 @@ class McatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+        
+    }
+    @objc func swipedRight() {
+        navigationController?.popViewController(animated: true)
     }
     @IBAction func btnBiologyTapped(_ sender: UIButton) {
         guard let url = URL(string: "https://drive.google.com/file/d/11egYdmc2RyIc2ninBiUcCwx_3J5SB3iE/view?usp=share_link") else {
